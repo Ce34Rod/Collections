@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class dispenserController {
 
-    @GetMapping("'")
+    @GetMapping("/")
     public String getDispenserPage() {
         return "dispenser.html";
     }
