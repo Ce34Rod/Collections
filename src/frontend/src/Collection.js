@@ -1,27 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Collection() {
+  const [showDot, setShowDot] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowDot(true);
+  };
+
   return (
-    <div style={{ backgroundColor: 'black', height: '100vh', position: 'relative' }}>
+    <div style={{ backgroundColor: 'black', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <h1 style={{
-        position: 'absolute',
         color: 'white',
-        top: '10%',
-        left: '42%'
+        marginBottom: '20px',
       }}>
         The Collection
       </h1>
       <div className="dispenser" style={{
-        marginTop: '30%',
-        marginLeft: '35%',
+        display: 'flex',
+        flexDirection: 'column',  // Ensure that elements are stacked vertically
+        alignItems: 'center',
       }}>
         <button type="button" className="btn btn-outline-light" style={{
-          margin: 'auto',
-          width: '50%',
-          height: '50%',
-        }}>
+          width: '150px',
+          height: '50px',
+          marginBottom: '10px',
+        }} onClick={handleButtonClick}>
           Get card
         </button>
+        {showDot && (
+          <div style={{
+            width: '20px',
+            height: '20px',
+            backgroundColor: 'yellow',
+            borderRadius: '50%',
+            marginTop: '10px' // Add some space between the button and the dot
+          }}></div>
+        )}
       </div>
       <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
