@@ -38,11 +38,11 @@ function Collection() {
           }}></div>
         )}
         {showDot && (
-          <TheCard
-            title="Amazing Card"
-            gifUrl="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
-            description="This is an amazing trading card with a cool GIF!"
-          />
+           <TheCard
+                  title="Every Thing is Going to be Alright"
+                  gifUrl="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
+                  description="Hey brother, you're going to die one way or the other. Is it really time to give up?"
+                />
         )}
       </div>
       <link
