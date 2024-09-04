@@ -18,6 +18,7 @@ function TheCard({ title, gifUrl, description }) {
         fontSize: '1.5em',
         textAlign: 'center',
         marginBottom: '10px',
+        color: 'white',
       }}>{title}</h2>
 
       <div style={{
@@ -36,6 +37,7 @@ function TheCard({ title, gifUrl, description }) {
       <p style={{
         fontSize: '1em',
         textAlign: 'center',
+        color: 'white',
       }}>{description}</p>
     </div>
   );

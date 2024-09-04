@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import TheCard from './TheCard'; // Adjust the path if necessary
 
 function Collection() {
   const [showDot, setShowDot] = useState(false);
@@ -17,7 +18,7 @@ function Collection() {
       </h1>
       <div className="dispenser" style={{
         display: 'flex',
-        flexDirection: 'column',  // Ensure that elements are stacked vertically
+        flexDirection: 'column',  // Ensure elements are stacked vertically
         alignItems: 'center',
       }}>
         <button type="button" className="btn btn-outline-light" style={{
@@ -33,8 +34,15 @@ function Collection() {
             height: '20px',
             backgroundColor: 'yellow',
             borderRadius: '50%',
-            marginTop: '10px' // Add some space between the button and the dot
+            marginBottom: '20px' // Add some space between the dot and the card
           }}></div>
+        )}
+        {showDot && (
+          <TheCard
+            title="Amazing Card"
+            gifUrl="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
+            description="This is an amazing trading card with a cool GIF!"
+          />
         )}
       </div>
       <link
