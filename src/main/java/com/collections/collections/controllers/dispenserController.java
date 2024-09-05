@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/cards")
 public class dispenserController {
 
     @Autowired
