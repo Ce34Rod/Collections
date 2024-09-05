@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
-import TheCard from './TheCard'; // Adjust the path if necessary
+import CardDetail from './CardDetail'; // Adjust the path if necessary
 
 function Collection() {
   const [showDot, setShowDot] = useState(false);
+  const [randomId, setRandomId] = useState(null);
+
+  const generateRandomId = () => {
+          // Generate a random number between 1 and 100 (adjust range as needed)
+//          const id = Math.floor(Math.random() * 2) + 1;
+          setRandomId(1);
+      };
 
   const handleButtonClick = () => {
     setShowDot(true);
+    generateRandomId();
   };
 
   return (
@@ -37,13 +45,9 @@ function Collection() {
             marginBottom: '20px' // Add some space between the dot and the card
           }}></div>
         )}
-        {showDot && (
-           <TheCard
-                  title="Every Thing is Going to be Alright"
-                  gifUrl="https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif"
-                  description="Hey brother, you're going to die one way or the other. Is it really time to give up?"
-                />
-        )}
+        {showDot && randomId !== null && (
+                     <CardDetail id={randomId} />)}
+
       </div>
       <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
