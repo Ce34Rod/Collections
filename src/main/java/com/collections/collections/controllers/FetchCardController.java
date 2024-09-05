@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/cards")
-public class dispenserController {
+public class FetchCardController {
 
     @Autowired
     private CardRepository cardRepository;

@@ -8,7 +8,7 @@ function Collection() {
   const generateRandomId = () => {
           // Generate a random number between 1 and 100 (adjust range as needed)
 //          const id = Math.floor(Math.random() * 2) + 1;
-          setRandomId(1);
+          setRandomId(2);
       };
 
   const handleButtonClick = () => {
