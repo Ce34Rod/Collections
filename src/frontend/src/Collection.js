@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import CardDetail from './CardDetail'; // Adjust the path if necessary
+import CardDetail from './CardDetail';
+import MyCollectionButton from './MyCollectionButton';
 
 function Collection() {
   const [showDot, setShowDot] = useState(false);
@@ -7,8 +8,8 @@ function Collection() {
 
   const generateRandomId = () => {
           // Generate a random number between 1 and 100 (adjust range as needed)
-//          const id = Math.floor(Math.random() * 2) + 1;
-          setRandomId(2);
+          const id = Math.floor(Math.random() * 3) + 1;
+          setRandomId(id);
       };
 
   const handleButtonClick = () => {
@@ -18,6 +19,8 @@ function Collection() {
 
   return (
     <div style={{ backgroundColor: 'black', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+
+    <MyCollectionButton />
       <h1 style={{
         color: 'white',
         marginBottom: '20px',

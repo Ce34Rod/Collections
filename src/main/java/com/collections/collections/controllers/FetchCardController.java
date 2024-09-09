@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -30,6 +32,14 @@ public class FetchCardController {
             return ResponseEntity.notFound().build();
         }
 
+    }
+
+    @GetMapping("/private-collection")
+    public ResponseEntity<List<Card>> getPrivateCollection(){
+        Iterable<Card> iterableCards = cardRepository.findAll();
+        List<Card> cards = new ArrayList<>();
+        iterableCards.forEach(cards::add);
+        return ResponseEntity.ok(cards);
     }
 
 }
