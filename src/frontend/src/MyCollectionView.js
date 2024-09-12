@@ -42,7 +42,44 @@ return (
       <h1>My Collection</h1>
       <div>
         {cards.map((card) => (
-          <CardDetail key={card.id} id={card.id} title={card.title} description={card.description} gifUrl={card.gifUrl} />
+          <div style={{
+                        width: '300px',
+                        height: '450px',
+                        backgroundColor: 'white',
+                        borderRadius: '10px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                        padding: '20px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}>
+                        <h2 style={{
+                          fontSize: '1.5em',
+                          textAlign: 'center',
+                          marginBottom: '10px',
+                          color: 'black',
+                        }}>{card.title}</h2>
+
+                        <div style={{
+                          width: '100%',
+                          height: '60%',
+                          marginBottom: '10px',
+                        }}>
+                          <img src={card.gifUrl} alt={card.title} style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            borderRadius: '5px',
+                          }} />
+                        </div>
+
+                        <p style={{
+                          fontSize: '1em',
+                          textAlign: 'center',
+                          color: 'black',
+                        }}>{card.description}</p>
+                      </div>
         ))}
       </div>
     </div>
