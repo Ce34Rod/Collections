@@ -38,51 +38,74 @@ function MyCollectionView() {
 
 
 return (
-    <div>
-      <h1>My Collection</h1>
-      <div>
+        <><h1 style={{
+        backgroundColor: 'black',
+              textAlign: 'center',
+              display: 'center',
+              color: 'white',
+              marginBottom: '20px',
+            }}>
+              My Collection
+            </h1>
+
+     <div style={{ backgroundColor: 'black', height: '100vh', display: 'flex',
+     }}>
+
+
+      <div style={{
+        marginTop: '10%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap', // Allows cards to wrap to a new line if there are many
+        gap: '20px', // Adds space between the cards
+        height: '100vh', // Ensures full height for vertical centering
+      }}>
         {cards.map((card) => (
-          <div style={{
-                        width: '300px',
-                        height: '450px',
-                        backgroundColor: 'white',
-                        borderRadius: '10px',
-                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-                        padding: '20px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                      }}>
-                        <h2 style={{
-                          fontSize: '1.5em',
-                          textAlign: 'center',
-                          marginBottom: '10px',
-                          color: 'black',
-                        }}>{card.title}</h2>
+          <div key={card.id} style={{
+            width: '300px',
+            height: '450px',
+            backgroundColor: 'white',
+            borderRadius: '10px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+            padding: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
+            <h2 style={{
+              fontSize: '1.5em',
+              textAlign: 'center',
+              marginBottom: '10px',
+              color: 'black',
+            }}>{card.title}</h2>
 
-                        <div style={{
-                          width: '100%',
-                          height: '60%',
-                          marginBottom: '10px',
-                        }}>
-                          <img src={card.gifUrl} alt={card.title} style={{
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                            borderRadius: '5px',
-                          }} />
-                        </div>
+            <div style={{
+              width: '100%',
+              height: '60%',
+              marginBottom: '10px',
+            }}>
+              <img src={card.gifUrl} alt={card.title} style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '5px',
+              }} />
+            </div>
 
-                        <p style={{
-                          fontSize: '1em',
-                          textAlign: 'center',
-                          color: 'black',
-                        }}>{card.description}</p>
-                      </div>
+            <p style={{
+              fontSize: '1em',
+              textAlign: 'center',
+              color: 'black',
+            }}>{card.description}</p>
+          </div>
         ))}
       </div>
-    </div>
+
+    </div></>
+
+
   );
 
 }

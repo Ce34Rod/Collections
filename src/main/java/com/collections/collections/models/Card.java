@@ -1,14 +1,13 @@
 package com.collections.collections.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Card {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "card_seq")
+    @SequenceGenerator(name = "card_seq", sequenceName = "card_sequence", allocationSize = 1)
     private int id;
 
     private String title;
