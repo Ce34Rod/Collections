@@ -8,7 +8,7 @@ function Collection() {
 
   const generateRandomId = () => {
           // Generate a random number between 1 and 100 (adjust range as needed)
-          const id = Math.floor(Math.random() * 5) + 1;
+          const id = Math.floor(Math.random() * 7) + 1;
           setRandomId(id);
       };
 
