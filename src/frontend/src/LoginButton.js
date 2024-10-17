@@ -18,8 +18,7 @@ const LoginButton = () => {
         height: '50px',
         marginBottom: '10px',
         position: 'relative',
-        left: '-40%',
-        bottom: '42%',
+        
 
       }}>
       Log in

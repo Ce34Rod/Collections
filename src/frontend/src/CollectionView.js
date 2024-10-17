@@ -3,6 +3,7 @@ import CardDetail from './CardDetail';
 import CreateCardButton from './CreateCardButton';
 import MyCollectionButton from './MyCollectionButton';
 import LoginButton from './LoginButton';
+import RegisterButton from './RegisterButton';
 
 function CollectionView() {
   const [showDot, setShowDot] = useState(false);
@@ -69,6 +70,7 @@ function CollectionView() {
       />
 
       <LoginButton />
+      <RegisterButton />
     </div>
   );
 }
