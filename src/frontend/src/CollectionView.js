@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import CardDetail from './CardDetail';
+import CreateCardButton from './CreateCardButton';
 import MyCollectionButton from './MyCollectionButton';
+import LoginButton from './LoginButton';
 
-function Collection() {
+function CollectionView() {
   const [showDot, setShowDot] = useState(false);
   const [randomId, setRandomId] = useState(null);
 
@@ -19,6 +21,8 @@ function Collection() {
 
   return (
     <div style={{ backgroundColor: 'black', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+
+    <CreateCardButton />
 
     <MyCollectionButton />
       <h1 style={{
@@ -63,8 +67,10 @@ function Collection() {
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossOrigin="anonymous"
       />
+
+      <LoginButton />
     </div>
   );
 }
 
-export default Collection;
+export default CollectionView;

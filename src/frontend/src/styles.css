@@ -1,0 +1,11 @@
+html, body {
+  height: 100%; /* Full height */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background-color: black; /* Set background color to black */
+  color: white; /* Set text color to white */
+}
+
+#root {
+  height: 100%; /* Ensure root container fills full height */
+}

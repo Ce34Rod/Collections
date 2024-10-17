@@ -10,13 +10,21 @@ const CreateCardButton = () => {
   };
 
   return (
-    <button type="button" className="btn btn-outline-dark" onClick={handleClick} style={{
-       width: '150px',
-        height: '50px',
-        marginBottom: '10px',
-           }}>
-      Go to New View
-    </button>
+    <button
+          type="button"
+          className="btn btn-outline-light"
+          onClick={handleClick}
+          style={{
+            width: '150px',
+            height: '50px',
+            marginBottom: '10px',
+            position: 'relative',
+            left: '30%',
+            top: '17%'
+
+          }}>
+          Create a Card
+        </button>
   );
 };
 

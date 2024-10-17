@@ -1,12 +1,9 @@
 import React from 'react';
-import CreateCardButton from './CreateCardButton';
-import Collection from './Collection';
-import MyCollectionButton from './MyCollectionButton';
+import CollectionView from './CollectionView';
 const Home = () => {
   return (
     <div>
-      <CreateCardButton />
-      <Collection />
+     <CollectionView />
     </div>
   );
 };

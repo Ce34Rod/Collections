@@ -1,7 +1,6 @@
-// CreateCardView.js
 import React, { useState } from 'react';
 
-const CreateCardView = () => {
+const LoginView = () => {
   const [title, setTitle] = useState('');
   const [gifUrl, setGifUrl] = useState('');
   const [description, setDescription] = useState('');
@@ -9,14 +8,13 @@ const CreateCardView = () => {
 
   const submitForm = async () => {
     const card = {
-      title,
-      gifUrl,
-      description
+      username,
+      password
     };
 
     try {
-      const response = await fetch('/api/createCard', {
-        method: 'POST',
+      const response = await fetch('/api/user', {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -100,4 +98,4 @@ const CreateCardView = () => {
   );
 };
 
-export default CreateCardView;
+export default LoginView;
