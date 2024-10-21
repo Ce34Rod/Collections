@@ -1,6 +1,10 @@
 package com.collections.collections.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Card {
@@ -13,14 +17,28 @@ public class Card {
     private String title;
     private String gifUrl;
     private String description;
+    @ManyToMany(mappedBy = "collection")
+    @JsonBackReference
+    // If you want to prevent serialization issues, consider using @JsonBackReference
+    private Set<User> owners = new HashSet<>();
 
-    public  Card(){}
+
+
+    public  Card(){};
     public Card(String title, String gifUrl, String description){
         this.title = title;
         this.gifUrl = gifUrl;
         this.description = description;
 
     }
+
+
+    public void addUser(User user) {
+        this.owners.add(user);
+        user.getCollection().add(this);  // Ensure the relationship is updated on the other side in memory
+    }
+
+
 
     public String getTitle() {
         return title;
@@ -44,5 +62,13 @@ public class Card {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Set<User> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(Set<User> owners) {
+        this.owners = owners;
     }
 }

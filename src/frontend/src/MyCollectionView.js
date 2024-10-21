@@ -3,9 +3,42 @@ import React, { useState, useEffect } from 'react';
 function MyCollectionView() {
     const [cards, setCards] = useState([]); // State to hold cards data
     const [loading, setLoading] = useState(true); // Loading state
+    const [userId, setUserId] = useState(null);
+
+    console.log(document.cookie + 'global cookie');
+
+    const getDifferentCookie = (name) => {
+      const value = `; ${document.cookie}`;
+      console.log(value+'value');
+    
+      // Split the cookie string by the `; name=` pattern
+      const parts = value.split(`; ${name}=`);
+    
+      console.log(parts+'parts');
+    
+      // Check if the cookie name exists in the string
+      if (parts.length === 2) {
+        // Extract the value part from the second split
+        const cookieValue = parts.pop().split(';').shift();
+        console.log(cookieValue+'cookie value'); // Output the cookie value
+        return cookieValue;
+      } else {
+        console.log("Cookie not found");
+        return null;
+      }
+    };
+    
 
 
     useEffect(() => {
+
+      const id = getDifferentCookie('userId');
+      console.log(id + 'A+B');
+        if (id) {
+          console.log(id + 'B');
+            setUserId(id);
+        }
+
 
     document.body.style.margin = '0';
             document.body.style.padding = '0';
@@ -14,7 +47,41 @@ function MyCollectionView() {
 
     const fetchCards = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/cards/private-collection'); // Replace with your API endpoint
+        const getCookie = (name) => {
+          const value = `; ${document.cookie}`;
+          console.log(value+'value');
+        
+          // Split the cookie string by the `; name=` pattern
+          const parts = value.split(`; ${name}=`);
+        
+          console.log(parts+'parts');
+        
+          // Check if the cookie name exists in the string
+          if (parts.length === 2) {
+            // Extract the value part from the second split
+            const cookieValue = parts.pop().split(';').shift();
+            console.log(cookieValue+'cookie value'); // Output the cookie value
+            return cookieValue;
+          } else {
+            console.log("Cookie not found");
+            return null;
+          }
+        };
+        const id = getCookie('user');
+      console.log(id + 'D');
+        if (id) {
+          console.log(id + 'E');
+            setUserId(id);
+        }
+        const response = await fetch('http://localhost:8080/api/cards/private-collection',
+          { method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'User-ID': id, // Send User ID in headers
+    }
+  }
+
+        ); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error('Failed to fetch cards');
         }

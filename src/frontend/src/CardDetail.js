@@ -6,26 +6,29 @@ const CardDetail = ({ id }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchCard = async () => {
-            try {
-                const response = await fetch(`/api/cards/${id}`); // Call the backend with the card ID
-                if (response.ok) {
-                    const data = await response.json(); // Parse the JSON response
-                    setCard(data); // Update the state with the card data
-                } else if (response.status === 404) {
-                    setError('Card not found');
-                } else {
-                    setError('An error occurred');
-                }
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchCard(); // Call the function when the component mounts
-    }, [id]); // Re-run the effect when the ID changes
+      console.log("Fetching card with ID:", id); // Log when fetching starts
+      const fetchCard = async () => {
+          try {
+              const response = await fetch(`/api/cards/${id}`);
+              console.log("Response Status:", response.status); // Log the response status
+              if (response.ok) {
+                  const data = await response.json();
+                  setCard(data);
+              } else if (response.status === 404) {
+                  setError('Card not found');
+              } else {
+                  setError('An error occurred. A');
+              }
+          } catch (err) {
+              setError(err.message);
+          } finally {
+              setLoading(false);
+          }
+      };
+  
+      fetchCard();
+  }, [id]); // Ensure it runs when `id` changes
+  
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
