@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import UserCollection from "./UserCollection";
+import UserCollection from "../services/UserCollection";
 
 
 function MyCollectionView2() {

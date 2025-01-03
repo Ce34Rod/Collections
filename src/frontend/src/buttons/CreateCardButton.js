@@ -16,11 +16,10 @@ const CreateCardButton = () => {
           onClick={handleClick}
           style={{
             width: '150px',
-            height: '50px',
-            marginBottom: '10px',
-            position: 'relative',
-            left: '30%',
-            top: '17%'
+      height: '80px',
+      position: 'absolute',
+      top: '180px', // Adjust for spacing
+      left: '50px',
 
           }}>
           Create a Card

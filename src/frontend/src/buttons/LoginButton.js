@@ -15,11 +15,10 @@ const LoginButton = () => {
       onClick={handleClick}
       style={{
         width: '150px',
-        height: '50px',
-        marginBottom: '10px',
-        position: 'relative',
-        
-
+      height: '80px',
+      position: 'absolute',
+      top: '270px', // Adjust for spacing
+      left: '50px',
       }}>
       Log in
     </button>

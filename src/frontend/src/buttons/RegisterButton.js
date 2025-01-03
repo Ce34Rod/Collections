@@ -15,11 +15,11 @@ const RegisterButton = () => {
       onClick={handleClick}
       style={{
         width: '150px',
-        height: '50px',
+        height: '80px',
         marginBottom: '10px',
-        position: 'relative',
-        
-
+        position: 'absolute',
+        top: '360px',
+        left: '50px',
       }}>
       Obtain Credintials
     </button>

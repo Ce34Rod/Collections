@@ -15,11 +15,11 @@ const MyCollectionButton = () => {
       onClick={handleClick}
       style={{
         width: '150px',
-        height: '50px',
-        marginBottom: '10px',
-        position: 'relative',
-        left: '-30%',
-        bottom: '-12%',
+      height: '80px',
+      marginBottom: '10px',
+      position: 'absolute',
+      top: '90px', // Adjust for spacing between buttons (80px height + 10px margin)
+      left: '50px',
 
       }}>
       My Collection

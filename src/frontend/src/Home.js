@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionView from './CollectionView';
+import CollectionView from './views/CollectionView';
 const Home = () => {
   return (
     <div>
